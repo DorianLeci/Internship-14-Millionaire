@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { AppState } from './enums/AppState.js'
-import { QuestionCard } from './components/QuestionCard.jsx';
+import { QuestionCard } from './components/QuestionCard/QuestionCard.jsx';
 import './App.css'
 import { gameManager } from './GameLogic/GameManager.js';
 
@@ -12,7 +12,7 @@ function App() {
     })
     return (
     <div>
-      {appState === AppState.GAME && <QuestionCard />}
+      {appState === AppState.GAME && <QuestionCard handleAnswer={(isCorrect)=>gameManager.answerQuestion(isCorrect)}/>}
     </div>
   );
 }

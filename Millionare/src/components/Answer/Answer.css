@@ -1,0 +1,23 @@
+.answer__button {
+    font-size: 24px;
+}
+
+.answer__button:hover {
+}
+
+.answer__button.selected{
+    background-color: rgb(124, 124, 23);
+}
+.answer__button.correct {
+    background-color: #4caf50; 
+    pointer-events: none;
+}
+
+.answer__button.wrong {
+    background-color: #f44336;
+    pointer-events: none;
+}
+
+.answer__button.selected {
+  border-color: #2196f3;
+}
