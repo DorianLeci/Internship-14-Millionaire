@@ -1,0 +1,11 @@
+.game-screen{
+    display: flex;
+    align-items: center;
+    height: 100vh
+}
+
+.question{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

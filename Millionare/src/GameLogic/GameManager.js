@@ -4,7 +4,6 @@ class GameManager{
     constructor(){
         this.state=new GameState();
         this.observers=[];
-        this.onGameEnd=null;
     }
 
     addObserver(observer){
@@ -19,17 +18,15 @@ class GameManager{
         this.observers.forEach(observer=>observer.update(this.state));
     }
 
-    addOnGameEndCallback(callback){
-        this.onGameEnd=callback;
-    }
-
     answerQuestion(isCorrect){
         this.state.nextQuestion(isCorrect);
-
-        if(this.state.isGameOver)
-            this.onGameEnd();
+        if(this.state.isGameOver) return;
 
         this.notify();
+    }
+
+    isGameOver(){
+        return this.state.isGameOver;
     }
 } 
 

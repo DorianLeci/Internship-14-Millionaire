@@ -1,1 +1,3 @@
-const StartScreen={}
+const StartScreen=()=>{
+    
+}

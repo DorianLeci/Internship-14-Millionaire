@@ -1,23 +1,47 @@
 .answer__button {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 250px;
+    height: 80px;
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
     font-size: 24px;
+    background: linear-gradient(180deg,rgba(22, 129, 158, 1) 0%, rgba(21, 44, 67, 1) 81%);
 }
 
+.answer__button::after{
+    content: "";
+    position: absolute;
+    inset:0;
+    z-index: -1;
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+}
 .answer__button:hover {
+
 }
 
-.answer__button.selected{
-    background-color: rgb(124, 124, 23);
-}
-.answer__button.correct {
-    background-color: #4caf50; 
+.answer__button.correct,
+.answer__button.wrong{
     pointer-events: none;
 }
 
-.answer__button.wrong {
-    background-color: #f44336;
-    pointer-events: none;
+.answer__button.selected::after{
+    background: var(--selected);
+    opacity:  var(--answer-btn-opacity);
 }
 
-.answer__button.selected {
-  border-color: #2196f3;
+.answer__button.correct::after{
+    background: #4caf50;
+    opacity: var(--answer-btn-opacity);
+}
+.answer__button.wrong::after {
+    background: #f44336;
+    opacity: var(--answer-btn-opacity);
 }

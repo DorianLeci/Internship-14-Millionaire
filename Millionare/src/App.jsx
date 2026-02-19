@@ -1,18 +1,15 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { AppState } from './enums/AppState.js'
-import { QuestionCard } from './components/QuestionCard/QuestionCard.jsx';
+import { GameScreen } from './screens/GameScreen/GameScreen.jsx';
 import './App.css'
-import { gameManager } from './GameLogic/GameManager.js';
 
 function App() {
     const [appState, setAppState] = useState(AppState.GAME);
 
-    useEffect(()=>{
-        gameManager.addOnGameEndCallback(()=>setAppState(AppState.END));
-    })
     return (
     <div>
-      {appState === AppState.GAME && <QuestionCard handleAnswer={(isCorrect)=>gameManager.answerQuestion(isCorrect)}/>}
+      {appState === AppState.GAME && <GameScreen onGameEnd={()=>setAppState(AppState.END)}/>}
+      {appState === AppState.END && <p>Kraj</p>}
     </div>
   );
 }

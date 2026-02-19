@@ -12,6 +12,7 @@ export function QuestionCard({handleAnswer}){
         const observer={
             update: (newState)=>{
                 setQuestion(newState.getCurrentQuestion());
+                setAnswerState({ isAnswered: false, selectedIndex: null });       
             }
         }
 
@@ -40,10 +41,9 @@ export function QuestionCard({handleAnswer}){
         const answer=question.answers[answerState.selectedIndex];
         const isCorrect=answer.isCorrect;
 
-        setTimeout(()=>{
+        setTimeout(()=>{     
             handleAnswer(isCorrect);
-            setAnswerState({ isAnswered: false, selectedIndex: null })
-        },5000);
+        },1000);
 
     }
 
@@ -65,10 +65,10 @@ export function QuestionCard({handleAnswer}){
                 }
                 )}
             </div>
-        </div>
-        {answerState.selectedIndex!==null && (
-            <button className="confirm-button" onClick={onAnswerConfirm}>Potvrdi</button>
-        )}        
+            {answerState.selectedIndex!==null && (
+                <button className="confirm-button" onClick={onAnswerConfirm}>Potvrdi</button>
+            )}             
+        </div>       
         </>
 
     );

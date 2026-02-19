@@ -1,5 +1,25 @@
+.question__card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.question__text{
+    font-size:32px;
+}
+
 .answer-container{
     display: flex;
     justify-content: center;
     gap: 1rem;
+}
+
+.confirm-button{
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    width: 300px;
+    font-size: 24px;
+    transform: translateX(-50%);
 }
