@@ -1,6 +1,6 @@
 export class Question{
-    cosntructor(question,answers){
-        this.question=question;
+    constructor(text,answers){
+        this.text=text;
         this.answers=answers;
     }
 }
