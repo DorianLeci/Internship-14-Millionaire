@@ -66,7 +66,8 @@ export class GameState{
     }
 
     setWinningPhase(){
-        this.phase=GamePhase.WON;        
+        this.phase=GamePhase.WON;   
+        this.score=GameState.rewards.at(-1); 
     }
 
     setLosingPhase(){

@@ -16,9 +16,9 @@ export function GameEndScreen({result}){
 
     return (
         <div className={screenClass}>
-            <div class="game-end-card">
+            <div className="game-end-card">
                 <h1 className="game-end-title">{result.won ? "You won!": "You lost"}</h1>
-                <p className="game-end-reward">Reward: <strong>{result.reward}</strong></p>
+                <p className="game-end-reward">Reward: <strong>{result.reward} €</strong></p>
                 <button className="restart-button">Play again</button>
             </div>
 

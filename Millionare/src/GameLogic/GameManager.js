@@ -27,7 +27,7 @@ class GameManager{
             setTimeout(()=>{
                 this.state.setWinningPhase();
                 this.notify();
-            },5000);
+            },2000);
         }
     }
 

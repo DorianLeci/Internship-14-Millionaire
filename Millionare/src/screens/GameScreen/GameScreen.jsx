@@ -5,6 +5,7 @@ import { useState,useEffect } from "react";
 import { GamePhase } from "../../enums/GamePhase.js";
 import classNames from "classnames";
 import "./GameScreen.css"
+import { LocalStorage } from "../../helpers/LocalStorage.js";
 
 export function GameScreen({onGameEnd}){
 
@@ -15,8 +16,27 @@ export function GameScreen({onGameEnd}){
             update: (newState)=>{
                 setPhase(newState.phase); 
 
-                if(newState.phase===GamePhase.WON || newState.phase===GamePhase.LOST)
-                    onGameEnd({won: phase===GamePhase.WON, reward: newState.score })
+                if(newState.phase===GamePhase.PLAYING){
+                    LocalStorage.saveGame({
+                        savedState:{
+                            currentIndex: newState.getCurrentRewardIndex(),
+                            questions: newState.questions
+                        },
+                        lastGameResult: null
+                    });
+                }
+                if(newState.phase===GamePhase.WON || newState.phase===GamePhase.LOST){
+                    const won=newState.phase===GamePhase.WON;
+                    const reward=newState.score;
+
+                    LocalStorage.saveGame({
+                        savedState:null,
+                        lastGameResult: { won,reward }
+                    });          
+
+                    onGameEnd({ won,reward })
+                }
+
             }
         }
 
