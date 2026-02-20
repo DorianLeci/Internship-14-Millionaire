@@ -6,13 +6,13 @@ import "./QuestionCard.css"
 export function QuestionCard({handleAnswer}){
 
     const [question,setQuestion]=useState(gameManager.state.getCurrentQuestion());
-    const [answerState,setAnswerState]=useState({ isAnswered: false, selectedIndex: null });
+    const [answerState,setAnswerState]=useState({ isAnswered: false, selectedIndex: null, correctIndex: null});
 
     useEffect(()=>{
         const observer={
             update: (newState)=>{
                 setQuestion(newState.getCurrentQuestion());
-                setAnswerState({ isAnswered: false, selectedIndex: null });       
+                setAnswerState({ isAnswered: false, selectedIndex: null, correctIndex: null });       
             }
         }
 
@@ -35,7 +35,8 @@ export function QuestionCard({handleAnswer}){
 
         setAnswerState(prev=>({
             ...prev,
-            isAnswered: true
+            isAnswered: true,
+            correctIndex: question.answers.findIndex(ans=>ans.isCorrect)
         }));
 
         const answer=question.answers[answerState.selectedIndex];
@@ -43,7 +44,7 @@ export function QuestionCard({handleAnswer}){
 
         setTimeout(()=>{     
             handleAnswer(isCorrect);
-        },1000);
+        },2000);
 
     }
 
@@ -59,6 +60,7 @@ export function QuestionCard({handleAnswer}){
                         answer={a}
                         isSelected={i==answerState.selectedIndex}
                         isAnswered={answerState.isAnswered}
+                        isCorrect={i==answerState.correctIndex}
                         onClick={()=>onSelectAnswer(i)}
                     ></Answer>
                 )

@@ -1,3 +1,4 @@
+import { LevelList } from "../../components/LevelList/LevelList.jsx";
 import { QuestionCard } from "../../components/QuestionCard/QuestionCard.jsx";
 import { gameManager } from "../../GameLogic/GameManager.js"
 import "./GameScreen.css"
@@ -16,6 +17,7 @@ export function GameScreen({onGameEnd}){
             <div className="question">
                 <QuestionCard handleAnswer={handleAnswer}></QuestionCard>
             </div>
+            <LevelList></LevelList> 
         </div>
     );
 }

@@ -1,12 +1,12 @@
 import classNames from "classnames";
 import "./Answer.css";
 
-export function Answer({answer,onClick,isSelected,isAnswered}){
+export function Answer({answer,onClick,isSelected,isAnswered,isCorrect}){
 
     const className= classNames("answer__button",{
         selected: isSelected,
-        correct: isAnswered && isSelected && answer.isCorrect,
-        wrong: isAnswered && isSelected && !answer.isCorrect
+        correct: isCorrect,
+        wrong: isAnswered && isSelected && !isCorrect
     });
 
     return (

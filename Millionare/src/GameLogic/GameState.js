@@ -28,6 +28,8 @@ export class GameState{
     }    
 
     nextQuestion(isCorrect){
+        if(this.currentIndex===GameState.questionNum) return;
+
         if(isCorrect){
             this.currentIndex++;
             this.score=this.getReward();
@@ -42,5 +44,13 @@ export class GameState{
 
     getReward(){
         return GameState.rewards[this.currentIndex];
+    }
+
+    getCurrentRewardIndex(){
+        return this.currentIndex;
+    }
+
+    static getProgressFillPercent(index){
+        return index===GameState.questionNum ? 100 : (index+1) / (GameState.rewards.length+1) * 100;
     }
 }
