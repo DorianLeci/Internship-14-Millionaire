@@ -12,6 +12,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  --color-gold:  #ff9800;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,6 +25,14 @@
   --wrong:  #f44336;  
 
   --answer-btn-opacity: 0.4;
+
+  --blue-btn-bg: linear-gradient(180deg,rgba(22, 129, 158, 1) 0%, rgba(21, 44, 67, 1) 81%);
+  --gradient-btn-bg: linear-gradient(180deg,rgba(194, 128, 139, 1) 0%, rgba(84, 127, 176, 1) 100%);
+
+  --btn-border-radius: 12px;
+  --btn-box-shadow-blue: 0px 5px 15px rgba(33, 150, 243, 0.7);
+  --btn-box-shadow-dark: 0px 10px 5px rgba(0, 0, 0, 0.8); 
+  --btn-text-shadow-dark: 1px 1px 3px black; 
 }
 
 a {

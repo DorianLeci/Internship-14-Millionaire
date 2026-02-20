@@ -14,6 +14,9 @@ export function GameScreen({onGameEnd}){
         const observer={
             update: (newState)=>{
                 setPhase(newState.phase); 
+
+                if(newState.phase===GamePhase.WON || newState.phase===GamePhase.LOST)
+                    onGameEnd({won: phase===GamePhase.WON, reward: newState.score })
             }
         }
 

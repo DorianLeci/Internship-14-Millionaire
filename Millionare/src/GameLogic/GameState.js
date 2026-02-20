@@ -11,6 +11,7 @@ export class GameState{
     }    
 
     static rewards=[100,200,500,1000,5000,10000,25000,50000,100000,500000,1e6];
+    static safeLevelIndex=4;
     static questionNum=10;
 
     reset(){
@@ -31,6 +32,9 @@ export class GameState{
     nextQuestion(isCorrect){
         if(!isCorrect){
             this.setLosingPhase();
+            this.score = (this.currentIndex >= GameState.safeLevelIndex) 
+                ? GameState.rewards[GameState.safeLevelIndex] : 0;
+
             return;
         }
 

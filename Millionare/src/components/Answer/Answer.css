@@ -8,10 +8,10 @@
     width: 250px;
     height: 80px;
     border: none;
-    border-radius: 12px;
+    border-radius: var(--btn-border-radius);
     padding: 10px;
     font-size: 24px;
-    background: linear-gradient(180deg,rgba(22, 129, 158, 1) 0%, rgba(21, 44, 67, 1) 81%);
+    background: var(--blue-btn-bg);
 }
 
 .answer__button::after{

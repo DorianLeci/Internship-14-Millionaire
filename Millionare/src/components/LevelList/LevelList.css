@@ -21,7 +21,7 @@
 
 .level__reward.current{
     transform: scale(1.15);
-    color: #ff9800;
+    color: var(--color-gold);
 }
 
 .progress {
