@@ -1,3 +1,4 @@
+import { GamePhase } from "../enums/GamePhase.js";
 import { GameState } from "./GameState.js";
 
 class GameManager{
@@ -20,9 +21,14 @@ class GameManager{
 
     answerQuestion(isCorrect){
         this.state.nextQuestion(isCorrect);
-        if(this.state.isGameOver) return;
-
         this.notify();
+
+        if(this.state.phase===GamePhase.FINISHING){
+            setTimeout(()=>{
+                this.state.setWinningPhase();
+                this.notify();
+            },5000);
+        }
     }
 
     isGameOver(){

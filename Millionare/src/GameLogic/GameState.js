@@ -1,11 +1,12 @@
 import { questions } from "../data/questions.js"
 import { ArrayHelper } from "../helpers/ArrayHelper.js";
+import { GamePhase } from "../enums/GamePhase.js";
 
 export class GameState{
     constructor(){
         this.currentIndex=0;
         this.score=0;
-        this.isGameOver=false;
+        this.phase=GamePhase.PLAYING;
         this.reset();
     }    
 
@@ -28,14 +29,20 @@ export class GameState{
     }    
 
     nextQuestion(isCorrect){
-        if(this.currentIndex===GameState.questionNum) return;
-
-        if(isCorrect){
-            this.currentIndex++;
-            this.score=this.getReward();
+        if(!isCorrect){
+            this.setLosingPhase();
+            return;
         }
 
-        else this.isGameOver=true;
+        this.currentIndex++;
+
+        if(this.currentIndex>=GameState.questionNum){
+            this.phase=GamePhase.FINISHING;
+            return;
+        }
+        
+        this.score=this.getReward();
+
     }
 
     getCurrentQuestion(){
@@ -52,5 +59,13 @@ export class GameState{
 
     static getProgressFillPercent(index){
         return index===GameState.questionNum ? 100 : (index+1) / (GameState.rewards.length+1) * 100;
+    }
+
+    setWinningPhase(){
+        this.phase=GamePhase.WON;        
+    }
+
+    setLosingPhase(){
+        this.phase=GamePhase.LOST;
     }
 }
