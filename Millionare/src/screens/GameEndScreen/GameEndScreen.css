@@ -1,43 +1,48 @@
-.game-end-screen{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    opacity: 0;
-    transform: scale(0.1);
-    transition: opacity 0.3s ease, transform 0.8s ease-out;
+.game-end-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  opacity: 0;
+  transform: scale(0.1);
+  transition:
+    opacity 0.3s ease,
+    transform 0.8s ease-out;
 }
 
-.game-end-screen.appear{
-    opacity: 1;
-    transform: scale(1);
+.game-end-screen.appear {
+  opacity: 1;
+  transform: scale(1);
 }
-.game-end-card{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.game-end-title{
-    font-size:80px;
+.game-end-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.game-end-reward{
-    font-size: 48px;
+.game-end-title {
+  font-size: 80px;
 }
 
-.game-end-reward strong{
-    color: var(--color-gold);
+.game-end-reward {
+  font-size: 48px;
 }
 
-.restart-button{
-    font-size: 28px;
-    font-weight: bold;
-    text-shadow: var(--btn-text-shadow-dark);
-    border: none;
-    border-radius: 12px;
-    box-shadow: var(--btn-box-shadow-dark);   
-    background: var(--gradient-btn-bg);
-    cursor: pointer;
+.game-end-reward strong {
+  color: var(--color-gold);
 }
 
+.restart-button {
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: var(--btn-text-shadow-dark);
+  border: none;
+  border-radius: 12px;
+  box-shadow: var(--btn-box-shadow-dark);
+  background: var(--gradient-btn-bg);
+  cursor: pointer;
+}
+
+.restart-button.hoverable:hover {
+  box-shadow: 0 4px 8px rgba(194, 128, 139, 0.5);
+}
