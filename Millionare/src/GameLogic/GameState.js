@@ -3,19 +3,29 @@ import { ArrayHelper } from "../helpers/ArrayHelper.js";
 import { GamePhase } from "../enums/GamePhase.js";
 
 export class GameState{
-    constructor(){
-        this.currentIndex=0;
-        this.score=0;
-        this.phase=GamePhase.PLAYING;
-        this.reset();
-    }    
 
     static rewards=[100,200,500,1000,5000,10000,25000,50000,100000,500000,1e6];
     static safeLevelIndex=4;
     static questionNum=10;
 
-    reset(){
+    static createNew(){
+        const state=new GameState();
+        state.init();
+        return state;
+    }
+
+    init(){
+        this.currentIndex=0;
+        this.score=GameState.rewards[this.currentIndex];
+        this.phase=GamePhase.PLAYING;
         this.getRandomQuestions();
+    }
+
+    load(savedState){
+        this.currentIndex=savedState.currentIndex;
+        this.score=GameState.rewards[this.currentIndex];
+        this.questions=savedState.questions;
+        this.phase=GamePhase.PLAYING;
     }
 
     getRandomQuestions(){

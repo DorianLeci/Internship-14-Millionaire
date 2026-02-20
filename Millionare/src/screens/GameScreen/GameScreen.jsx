@@ -29,11 +29,6 @@ export function GameScreen({onGameEnd}){
                     const won=newState.phase===GamePhase.WON;
                     const reward=newState.score;
 
-                    LocalStorage.saveGame({
-                        savedState:null,
-                        lastGameResult: { won,reward }
-                    });          
-
                     onGameEnd({ won,reward })
                 }
 

@@ -3,7 +3,7 @@ import { GameState } from "./GameState.js";
 
 class GameManager{
     constructor(){
-        this.state=new GameState();
+        this.state=GameState.createNew();
         this.observers=[];
     }
 
