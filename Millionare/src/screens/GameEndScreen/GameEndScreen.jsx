@@ -14,12 +14,15 @@ export function GameEndScreen({ result, onGameRestart }) {
     appear: appear === true,
   });
 
+  const titleClass = classNames("game-end-title", {
+    win: result.won,
+    defeat: !result.won,
+  });
+
   return (
     <div className={screenClass}>
       <div className="game-end-card">
-        <h1 className="game-end-title">
-          {result.won ? "You won!" : "You lost"}
-        </h1>
+        <h1 className={titleClass}>{result.won ? "You won!" : "You lost"}</h1>
         <p className="game-end-reward">
           Reward: <strong>{result.reward} €</strong>
         </p>

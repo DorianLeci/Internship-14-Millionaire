@@ -1,0 +1,95 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.menu__title {
+  position: relative;
+  z-index: 0;
+  margin-bottom: 64px;
+  font-size: 64px;
+  text-shadow: var(--aqua-text-shadow);
+}
+
+.menu__title::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -200%;
+  left: 50%;
+  width: 250px;
+  aspect-ratio: 1/1;
+  opacity: 0.8;
+  background-repeat: no-repeat;
+  background-image: url("../../assets/images/quiz.svg");
+  filter: invert(80%) sepia(100%) saturate(400%) hue-rotate(180deg);
+  transform: translateX(-150%) rotateZ(20deg);
+}
+
+.menu__title::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -120%;
+  right: 25%;
+  width: 150px;
+  aspect-ratio: 1/1;
+  background-image: url("../../assets/images/quiz.svg");
+  background-repeat: no-repeat;
+  filter: invert(80%) sepia(100%) saturate(400%) hue-rotate(250deg);
+  transform: rotateZ(-15deg) scaleY(-1);
+  opacity: 0.8;
+}
+
+.app-icon {
+  width: 300px;
+  aspect-ratio: 1/1;
+}
+
+.last-game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 32px;
+  font-size: 32px;
+}
+
+.result-text--win {
+  font-weight: bold;
+  color: rgb(32, 230, 32);
+}
+.result-text--defeat {
+  font-weight: bold;
+  color: red;
+}
+
+.reward-text {
+  font-weight: bold;
+  color: var(--color-gold);
+}
+
+.menu__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.menu__buttons button {
+  width: 400px;
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: var(--btn-text-shadow-dark);
+  border: none;
+  border-radius: 12px;
+  box-shadow: var(--btn-box-shadow-dark);
+  background: var(--gradient-btn-bg);
+  cursor: pointer;
+}
+
+.menu__buttons button.hoverable:hover {
+  box-shadow: var(--gradient-btn-hover-shadow);
+}

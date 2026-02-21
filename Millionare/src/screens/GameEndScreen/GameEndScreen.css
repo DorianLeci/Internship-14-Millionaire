@@ -21,7 +21,32 @@
 }
 
 .game-end-title {
+  position: relative;
+  z-index: 0;
   font-size: 80px;
+  text-shadow: var(--aqua-text-shadow);
+}
+
+.game-end-title::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -80%;
+  left: 75%;
+  width: 130px;
+  aspect-ratio: 1/1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.85;
+  transform: rotateZ(20deg);
+}
+
+.game-end-title.win::before {
+  background-image: url("../../assets/images/win.svg");
+}
+
+.game-end-title.defeat::before {
+  background-image: url("../../assets/images/defeat.svg");
 }
 
 .game-end-reward {
@@ -44,5 +69,5 @@
 }
 
 .restart-button.hoverable:hover {
-  box-shadow: 0 4px 8px rgba(194, 128, 139, 0.5);
+  box-shadow: var(--gradient-btn-hover-shadow);
 }
