@@ -1,17 +1,21 @@
-.game-screen{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 100vh;
-    transition: justify-content 2s ease-in;
+.game-screen {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  transition: justify-content 2s ease-in;
 }
 
-.question{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+.leftSide-wrapper {
+  align-self: flex-start;
+  padding-top: 56px;
+}
+.question {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.game-screen.finishing{
-    justify-content: center;
+.game-screen.finishing {
+  justify-content: center;
 }
