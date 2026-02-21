@@ -1,5 +1,6 @@
 import { GamePhase } from "../enums/GamePhase.js";
 import { GameState } from "./GameState.js";
+import { JokerType } from "../enums/JokerType.js";
 
 class GameManager {
   constructor() {
@@ -29,6 +30,20 @@ class GameManager {
         this.notify();
       }, 4500);
     }
+  }
+
+  useJoker(type) {
+    if (!this.state.jokerState.isAvailible(type)) return;
+
+    switch (type) {
+      case JokerType.FIFTY_FIFTY:
+        this.state.useFiftyFiftyJoker();
+        break;
+
+      default:
+        break;
+    }
+    this.notify();
   }
 
   isGameOver() {

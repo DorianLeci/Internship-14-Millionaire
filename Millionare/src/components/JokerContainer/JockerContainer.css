@@ -1,0 +1,14 @@
+.joker-button {
+  background-color: transparent;
+  transition: opacity 0.3s ease;
+}
+
+.joker-button:disabled {
+  opacity: 0.5;
+}
+
+.fifty-icon {
+  filter: invert(1);
+  width: 128px;
+  aspect-ratio: 1/1;
+}

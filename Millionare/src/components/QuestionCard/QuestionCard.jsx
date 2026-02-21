@@ -34,7 +34,7 @@ export function QuestionCard({ handleAnswer }) {
   }, []);
 
   const onSelectAnswer = (index) => {
-    if (answerState.isAnswered) return;
+    if (answerState.isAnswered || question.answers[index].removed) return;
 
     setAnswerState((prev) => ({
       ...prev,
@@ -69,6 +69,7 @@ export function QuestionCard({ handleAnswer }) {
               <Answer
                 key={i}
                 answer={a}
+                isRemoved={a.removed}
                 isSelected={i == answerState.selectedIndex}
                 isAnswered={answerState.isAnswered}
                 isCorrect={i == answerState.correctIndex}
