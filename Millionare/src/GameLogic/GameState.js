@@ -11,9 +11,10 @@ export class GameState {
   static safeLevelIndex = 4;
   static questionNum = 10;
 
-  static createNew() {
+  static createOrLoad(savedState) {
     const state = new GameState();
-    state.init();
+    if (savedState) state.load(savedState);
+    else state.init();
     return state;
   }
 
@@ -29,21 +30,16 @@ export class GameState {
     this.currentIndex = savedState.currentIndex;
     this.score = GameState.rewards[this.currentIndex];
     this.questions = savedState.questions;
-    this.jokerState = new JokerState();
+    this.jokerState = new JokerState(savedState.jokerState);
     this.phase = GamePhase.PLAYING;
   }
 
   getRandomQuestions() {
-    const letters = ["A", "B", "C", "D"];
-
     const randomQuestions = ArrayHelper.shuffleArray(questions)
       .slice(0, GameState.questionNum)
       .map((q) => ({
         ...q,
-        answers: ArrayHelper.shuffleArray(q.answers).map((a, i) => ({
-          ...a,
-          letter: letters[i],
-        })),
+        answers: ArrayHelper.shuffleAndMapAnswers(q.answers),
       }));
 
     this.questions = randomQuestions;
@@ -58,6 +54,29 @@ export class GameState {
     toRemove.forEach((a) => (a.removed = true));
 
     this.jokerState.use(JokerType.FIFTY_FIFTY);
+  }
+
+  useSkipJoker() {
+    this.currentIndex++;
+    this.jokerState.use(JokerType.SKIP_QUESTION);
+  }
+
+  useSwapJoker() {
+    const currQuestion = this.getCurrentQuestion();
+
+    const remainingPool = questions.filter((q) => !this.questions.includes(q));
+    const randomIndex = Math.floor(Math.random() * remainingPool.length);
+
+    const poolQuestion = remainingPool[randomIndex];
+
+    const newQuestion = {
+      ...poolQuestion,
+      answers: ArrayHelper.shuffleAndMapAnswers(poolQuestion.answers),
+    };
+
+    this.questions[this.currentIndex] = newQuestion;
+
+    this.jokerState.use(JokerType.SWAP_QUESTION);
   }
 
   nextQuestion(isCorrect) {
@@ -106,5 +125,9 @@ export class GameState {
 
   setLosingPhase() {
     this.phase = GamePhase.LOST;
+  }
+
+  isLastQuestion() {
+    return this.currentIndex === this.questions.length - 1;
   }
 }

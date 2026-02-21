@@ -12,6 +12,7 @@ function App() {
   const [savedGame, setSavedGame] = useState(LocalStorage.loadGame());
 
   const handleGameStart = () => {
+    gameManager.startNewGame();
     const newGame = {
       savedState: {
         currentIndex: gameManager.state.getCurrentRewardIndex(),
@@ -25,7 +26,7 @@ function App() {
   };
 
   const handleGameContinue = () => {
-    gameManager.state.load(savedGame.savedState);
+    gameManager.continueGame(savedGame.savedState);
     setAppState(AppState.GAME);
   };
 
@@ -41,7 +42,7 @@ function App() {
 
   const handleGameRestart = () => {
     setTimeout(() => {
-      gameManager.state.init();
+      gameManager.startNewGame();
       handleGameStart();
     }, 1500);
   };

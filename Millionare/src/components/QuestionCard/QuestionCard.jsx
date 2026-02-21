@@ -4,7 +4,7 @@ import { Answer } from "../Answer/Answer.jsx";
 import "./QuestionCard.css";
 import { HoverLockButton } from "../HoverLockButton/HoverLockButton.jsx";
 
-export function QuestionCard({ handleAnswer }) {
+export function QuestionCard({ handleAnswer, onAnsweredChange }) {
   const [question, setQuestion] = useState(
     gameManager.state.getCurrentQuestion(),
   );
@@ -23,6 +23,8 @@ export function QuestionCard({ handleAnswer }) {
           selectedIndex: null,
           correctIndex: null,
         });
+
+        onAnsweredChange(false);
       },
     };
 
@@ -50,6 +52,8 @@ export function QuestionCard({ handleAnswer }) {
       isAnswered: true,
       correctIndex: question.answers.findIndex((ans) => ans.isCorrect),
     }));
+
+    onAnsweredChange(true);
 
     const answer = question.answers[answerState.selectedIndex];
     const isCorrect = answer.isCorrect;

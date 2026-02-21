@@ -10,6 +10,7 @@ import { JokerContainer } from "../../components/JokerContainer/JokerContainer.j
 
 export function GameScreen({ onGameEnd }) {
   const [phase, setPhase] = useState(gameManager.state.phase);
+  const [currentQuestionAnswered, setCurrentQuestionAnswered] = useState(false);
 
   useEffect(() => {
     const observer = {
@@ -21,6 +22,7 @@ export function GameScreen({ onGameEnd }) {
             savedState: {
               currentIndex: newState.getCurrentRewardIndex(),
               questions: newState.questions,
+              jokerState: newState.jokerState.isJokerUsed,
             },
             lastGameResult: null,
           });
@@ -56,9 +58,12 @@ export function GameScreen({ onGameEnd }) {
     <div className={screenClass}>
       {phase === GamePhase.PLAYING && (
         <div className="leftSide-wrapper">
-          <JokerContainer />
+          <JokerContainer currentQuestionAnswered={currentQuestionAnswered} />
           <div className="question">
-            <QuestionCard handleAnswer={handleAnswer}></QuestionCard>
+            <QuestionCard
+              handleAnswer={handleAnswer}
+              onAnsweredChange={setCurrentQuestionAnswered}
+            ></QuestionCard>
           </div>
         </div>
       )}

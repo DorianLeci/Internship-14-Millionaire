@@ -4,8 +4,16 @@ import { JokerType } from "../enums/JokerType.js";
 
 class GameManager {
   constructor() {
-    this.state = GameState.createNew();
+    this.state = null;
     this.observers = [];
+  }
+
+  startNewGame() {
+    this.state = GameState.createOrLoad();
+  }
+
+  continueGame(savedState) {
+    this.state = GameState.createOrLoad(savedState);
   }
 
   addObserver(observer) {
@@ -38,6 +46,14 @@ class GameManager {
     switch (type) {
       case JokerType.FIFTY_FIFTY:
         this.state.useFiftyFiftyJoker();
+        break;
+
+      case JokerType.SKIP_QUESTION:
+        this.state.useSkipJoker();
+        break;
+
+      case JokerType.SWAP_QUESTION:
+        this.state.useSwapJoker();
         break;
 
       default:

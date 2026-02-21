@@ -1,8 +1,8 @@
 import { JokerType } from "../enums/JokerType.js";
 
 export class JokerState {
-  constructor() {
-    this.isJokerUsed = {
+  constructor(initalState) {
+    this.isJokerUsed = initalState || {
       [JokerType.FIFTY_FIFTY]: false,
       [JokerType.SWAP_QUESTION]: false,
       [JokerType.SKIP_QUESTION]: false,
