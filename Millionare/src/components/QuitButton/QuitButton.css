@@ -1,0 +1,35 @@
+.quit-button-container {
+  padding: 0px 20px;
+  border: none;
+  border-radius: var(--btn-border-radius);
+  background: var(--blue-btn-bg);
+}
+
+.quit-button {
+  height: 105.5px;
+  padding: 0;
+  background-color: transparent;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+  background: transparent;
+}
+
+.quit-button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.quit-button:hover:not(:disabled) {
+  transform: scale(1.1);
+}
+
+.quit-button:hover:not(:disabled) .icon {
+  filter: invert(0.75) brightness(1) sepia(1) saturate(7) hue-rotate(130deg);
+}
+
+.quit-button img {
+  width: 80px;
+  aspect-ratio: 1/1;
+  filter: invert(1) brightness(1.5);
+}

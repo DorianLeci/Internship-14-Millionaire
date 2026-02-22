@@ -17,6 +17,7 @@
 .game-end-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -49,6 +50,10 @@
   background-image: url("../../assets/images/defeat.svg");
 }
 
+.game-end-title.quit::before {
+  background-image: url("../../assets/images/quit.svg");
+}
+
 .game-end-reward {
   font-size: 48px;
 }
@@ -58,6 +63,7 @@
 }
 
 .restart-button {
+  width: 350px;
   font-size: 28px;
   font-weight: bold;
   text-shadow: var(--btn-text-shadow-dark);

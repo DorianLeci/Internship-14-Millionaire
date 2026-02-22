@@ -1,6 +1,7 @@
-export const GamePhase=Object.freeze({
-    PLAYING: "playing",
-    FINISHING: "finishing",
-    WON: "won",
-    LOST: "lost"
+export const GamePhase = Object.freeze({
+  PLAYING: "playing",
+  FINISHING: "finishing",
+  QUIT: "quit",
+  WON: "won",
+  LOST: "lost",
 });

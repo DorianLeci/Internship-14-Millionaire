@@ -42,8 +42,11 @@
   --btn-box-shadow-dark: 0px 10px 5px rgba(0, 0, 0, 0.8);
   --btn-text-shadow-dark: 1px 1px 3px black;
 
-  --gradient-btn-hover-shadow: 0 4px 8px rgba(194, 128, 139, 0.5);
+  --gradient-btn-hover-shadow: 0 4px 8px rgba(239, 164, 176, 0.7);
   --aqua-text-shadow: 0px 4px 4px aqua;
+  --red-text-shadow: 0px 4px 4px rgb(177, 74, 74);
+
+  --on-hover-brightness: brightness(1.15);
 }
 
 a {
@@ -85,7 +88,7 @@ button {
 }
 
 button.hoverable:hover {
-  filter: brightness(1.15);
+  filter: var(--on-hover-brightness);
 }
 
 button.hoverable:active {

@@ -21,7 +21,7 @@ export class GameState {
 
   init() {
     this.currentIndex = 0;
-    this.score = GameState.rewards[this.currentIndex];
+    this.score = 0;
     this.phase = GamePhase.PLAYING;
     this.jokerState = new JokerState();
     this.getRandomQuestions();
@@ -29,7 +29,7 @@ export class GameState {
 
   load(savedState) {
     this.currentIndex = savedState.currentIndex;
-    this.score = GameState.rewards[this.currentIndex];
+    this.updateReward();
     this.questions = savedState.questions;
     this.jokerState = new JokerState(savedState.jokerState);
     this.phase = GamePhase.PLAYING;
@@ -60,6 +60,7 @@ export class GameState {
   useSkipJoker() {
     this.currentIndex++;
     this.jokerState.use(JokerType.SKIP_QUESTION);
+    this.updateReward();
   }
 
   useSwapJoker() {
@@ -98,15 +99,16 @@ export class GameState {
       return;
     }
 
-    this.score = this.getReward();
+    this.updateReward();
   }
 
   getCurrentQuestion() {
     return this.questions[this.currentIndex];
   }
 
-  getReward() {
-    return GameState.rewards[this.currentIndex];
+  updateReward() {
+    const lastRewardIndex = this.currentIndex - 1;
+    this.score = lastRewardIndex >= 0 ? GameState.rewards[lastRewardIndex] : 0;
   }
 
   getCurrentRewardIndex() {
@@ -131,5 +133,9 @@ export class GameState {
 
   isLastQuestion() {
     return this.currentIndex === this.questions.length - 1;
+  }
+
+  quitGame() {
+    this.phase = GamePhase.QUIT;
   }
 }

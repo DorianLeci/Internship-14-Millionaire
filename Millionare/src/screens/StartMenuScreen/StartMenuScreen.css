@@ -57,13 +57,18 @@
   font-size: 32px;
 }
 
-.result-text--win {
+.result-text.win {
   font-weight: bold;
   color: rgb(32, 230, 32);
 }
-.result-text--defeat {
+.result-text.defeat {
   font-weight: bold;
   color: red;
+}
+
+.result-text.quit {
+  font-weight: bold;
+  color: aqua;
 }
 
 .reward-text {

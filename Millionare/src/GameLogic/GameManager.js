@@ -65,6 +65,11 @@ class GameManager {
   isGameOver() {
     return this.state.isGameOver;
   }
+
+  quitGame() {
+    this.state.quitGame();
+    this.notify();
+  }
 }
 
 export const gameManager = new GameManager();

@@ -7,6 +7,7 @@ import classNames from "classnames";
 import "./GameScreen.css";
 import { LocalStorage } from "../../helpers/LocalStorage.js";
 import { JokerContainer } from "../../components/JokerContainer/JokerContainer.jsx";
+import { QuitButton } from "../../components/QuitButton/QuitButton.jsx";
 
 export function GameScreen({ onGameEnd }) {
   const [phase, setPhase] = useState(gameManager.state.phase);
@@ -26,15 +27,14 @@ export function GameScreen({ onGameEnd }) {
             },
             lastGameResult: null,
           });
-        }
-        if (
+        } else if (
           newState.phase === GamePhase.WON ||
-          newState.phase === GamePhase.LOST
+          newState.phase === GamePhase.LOST ||
+          newState.phase === GamePhase.QUIT
         ) {
-          const won = newState.phase === GamePhase.WON;
           const reward = newState.score;
 
-          onGameEnd({ won, reward });
+          onGameEnd({ phase: newState.phase, reward });
         }
       },
     };
@@ -58,7 +58,13 @@ export function GameScreen({ onGameEnd }) {
     <div className={screenClass}>
       {phase === GamePhase.PLAYING && (
         <div className="leftSide-wrapper">
-          <JokerContainer currentQuestionAnswered={currentQuestionAnswered} />
+          <div class="additional-buttons-wrapper">
+            <JokerContainer currentQuestionAnswered={currentQuestionAnswered} />
+            <div className="quit-button-wrapper">
+              <h2 className="quit-title">Quit</h2>
+              <QuitButton currentQuestionAnswered={currentQuestionAnswered} />
+            </div>
+          </div>
           <div className="question">
             <QuestionCard
               handleAnswer={handleAnswer}

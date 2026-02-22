@@ -10,6 +10,20 @@
   align-self: flex-start;
   padding-top: 64px;
 }
+
+.additional-buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.quit-title {
+  font-size: 40px;
+  color: #00ffff;
+  font-weight: bold;
+  text-shadow: 0 0 5px #00ffff;
+}
+
 .question {
   display: flex;
   flex-direction: column;
