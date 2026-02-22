@@ -12,22 +12,26 @@ function App() {
   const [savedGame, setSavedGame] = useState(LocalStorage.loadGame());
 
   const handleGameStart = () => {
-    gameManager.startNewGame();
-    const newGame = {
-      savedState: {
-        currentIndex: gameManager.state.getCurrentRewardIndex(),
-        questions: gameManager.state.questions,
-      },
-      lastGameResult: null,
-    };
-    LocalStorage.saveGame(newGame);
-    setSavedGame(newGame);
-    setAppState(AppState.GAME);
+    setTimeout(() => {
+      gameManager.startNewGame();
+      const newGame = {
+        savedState: {
+          currentIndex: gameManager.state.getCurrentRewardIndex(),
+          questions: gameManager.state.questions,
+        },
+        lastGameResult: null,
+      };
+      LocalStorage.saveGame(newGame);
+      setSavedGame(newGame);
+      setAppState(AppState.GAME);
+    }, 1500);
   };
 
   const handleGameContinue = () => {
-    gameManager.continueGame(savedGame.savedState);
-    setAppState(AppState.GAME);
+    setTimeout(() => {
+      gameManager.continueGame(savedGame.savedState);
+      setAppState(AppState.GAME);
+    }, 1500);
   };
 
   const handleGameEnd = (gameResult) => {
@@ -41,10 +45,8 @@ function App() {
   };
 
   const handleGameRestart = () => {
-    setTimeout(() => {
-      gameManager.startNewGame();
-      handleGameStart();
-    }, 1500);
+    gameManager.startNewGame();
+    handleGameStart();
   };
 
   return (

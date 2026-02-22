@@ -24,7 +24,8 @@ export function StartMenuScreen({
             </span>
           </span>
           <span className="last-game__reward">
-            Reward: <span className="reward-text">{lastGameResult.reward}</span>
+            Reward:{" "}
+            <span className="reward-text">{lastGameResult.reward} €</span>
           </span>
         </div>
       )}

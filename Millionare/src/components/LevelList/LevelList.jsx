@@ -11,6 +11,10 @@ export function LevelList() {
   );
   const [listHeight, setListHeight] = useState(0);
 
+  const [progressPercent, setProgressPercent] = useState(
+    gameManager.state.getProgressFillPercent(),
+  );
+
   useEffect(() => {
     if (listRef.current) {
       setListHeight(listRef.current.offsetHeight);
@@ -18,6 +22,7 @@ export function LevelList() {
     const observer = {
       update: (newState) => {
         setRewardIndex(newState.getCurrentRewardIndex());
+        setProgressPercent(newState.getProgressFillPercent());
       },
     };
 
@@ -28,8 +33,7 @@ export function LevelList() {
     };
   }, []);
 
-  const fillPercent = GameState.getProgressFillPercent(rewardIndex);
-  const clipValue = 100 - fillPercent;
+  const clipValue = 100 - progressPercent;
 
   return (
     <div className="level-container">

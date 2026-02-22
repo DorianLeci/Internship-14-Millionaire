@@ -6,8 +6,9 @@ import { JokerType } from "../enums/JokerType.js";
 
 export class GameState {
   static rewards = [
-    100, 200, 500, 1000, 5000, 10000, 25000, 50000, 100000, 500000, 1e6,
+    100, 200, 500, 1000, 5000, 10000, 25000, 50000, 100000, 500000,
   ];
+
   static safeLevelIndex = 4;
   static questionNum = 10;
 
@@ -109,13 +110,14 @@ export class GameState {
   }
 
   getCurrentRewardIndex() {
-    return this.currentIndex;
+    const lastIndex = GameState.rewards.length - 1;
+    return Math.min(this.currentIndex, lastIndex);
   }
 
-  static getProgressFillPercent(index) {
-    return index === GameState.questionNum
+  getProgressFillPercent() {
+    return this.currentIndex === GameState.questionNum
       ? 100
-      : ((index + 1) / (GameState.rewards.length + 1)) * 100;
+      : ((this.currentIndex + 1) / (GameState.rewards.length + 1)) * 100;
   }
 
   setWinningPhase() {
