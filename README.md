@@ -4,12 +4,10 @@
 ---
 
 ## Features
-- Fully interactive quiz game with multiple-choice questions
-- Question animations using Framer Motion
-- Joker support (50/50, skip, etc.)
+- Continue game (if you refresh tab or closed browser completely
+- Giving up and taking the last prize allowed
+- Joker support (50/50, skip question, swap question)
 - Score tracking and progress display
-- Responsive UI
-
 ---
 
 ## Requirements
