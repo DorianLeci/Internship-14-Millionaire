@@ -2,215 +2,240 @@ import { Question } from "./Question.js";
 import { Answer } from "./Answer.js";
 
 export const questions = [
-
-  new Question("Koji je glavni grad Hrvatske?", [
-    new Answer("Split", false),
-    new Answer("Zagreb", true),
-    new Answer("Rijeka", false),
-    new Answer("Osijek", false),
+  new Question("Which country has the highest population in the world?", [
+    new Answer("India", false),
+    new Answer("USA", false),
+    new Answer("China", true),
+    new Answer("Russia", false),
   ]),
 
-  new Question("Koliko kontinenata postoji?", [
+  new Question("How many continents are there on Earth?", [
     new Answer("5", false),
     new Answer("6", false),
     new Answer("7", true),
     new Answer("8", false),
   ]),
 
-  new Question("Koji planet je najbliži Suncu?", [
-    new Answer("Venera", false),
-    new Answer("Merkur", true),
+  new Question("Which planet is closest to the Sun?", [
+    new Answer("Venus", false),
+    new Answer("Mercury", true),
     new Answer("Mars", false),
     new Answer("Jupiter", false),
   ]),
 
-  new Question("Koji je najveći ocean na Zemlji?", [
-    new Answer("Atlantski", false),
-    new Answer("Indijski", false),
-    new Answer("Tihi", true),
-    new Answer("Arktički", false),
+  new Question("Which is the largest ocean on Earth?", [
+    new Answer("Atlantic", false),
+    new Answer("Indian", false),
+    new Answer("Pacific", true),
+    new Answer("Arctic", false),
   ]),
 
-  new Question("Koliko dana ima prijestupna godina?", [
+  new Question("How many days are in a leap year?", [
     new Answer("365", false),
     new Answer("366", true),
     new Answer("364", false),
     new Answer("360", false),
   ]),
 
-  new Question("Što React koristi za efikasno ažuriranje DOM-a?", [
+  new Question("What does React use to efficiently update the DOM?", [
     new Answer("Shadow DOM", false),
     new Answer("Virtual DOM", true),
     new Answer("Real DOM Cache", false),
     new Answer("HTML Diff Engine", false),
   ]),
 
-  new Question("Koja je najmanja država na svijetu?", [
-    new Answer("Monako", false),
-    new Answer("Vatikan", true),
+  new Question("Which is the smallest country in the world?", [
+    new Answer("Monaco", false),
+    new Answer("Vatican City", true),
     new Answer("San Marino", false),
     new Answer("Malta", false),
   ]),
 
-  new Question("Koji je kemijski simbol za zlato?", [
+  new Question("What is the chemical symbol for gold?", [
     new Answer("Ag", false),
     new Answer("Au", true),
     new Answer("Fe", false),
     new Answer("Zn", false),
   ]),
 
-  new Question("Koji je najveći sisavac na svijetu?", [
-    new Answer("Slon", false),
-    new Answer("Plavi kit", true),
-    new Answer("Žirafa", false),
-    new Answer("Nosorog", false),
+  new Question("Which is the largest mammal on Earth?", [
+    new Answer("Elephant", false),
+    new Answer("Blue Whale", true),
+    new Answer("Giraffe", false),
+    new Answer("Rhinoceros", false),
   ]),
 
-  new Question("Koja je najduža rijeka na svijetu?", [
-    new Answer("Amazona", false),
-    new Answer("Nil", true),
-    new Answer("Dunav", false),
+  new Question("Which is the longest river in the world?", [
+    new Answer("Amazon", false),
+    new Answer("Nile", true),
+    new Answer("Danube", false),
     new Answer("Mississippi", false),
   ]),
 
-  new Question("Koliko ima igrača na terenu ima u nogometnoj ekipi?", [
+  new Question("How many players are on a soccer team on the field?", [
     new Answer("9", false),
     new Answer("10", false),
     new Answer("11", true),
     new Answer("12", false),
   ]),
 
-  new Question("Koji je najveći planet Sunčevog sustava?", [
+  new Question("Which is the largest planet in the Solar System?", [
     new Answer("Saturn", false),
     new Answer("Jupiter", true),
-    new Answer("Neptun", false),
+    new Answer("Neptune", false),
     new Answer("Mars", false),
   ]),
 
-  new Question("Koji HTML tag se koristi za link?", [
+  new Question("Which HTML tag is used to create a hyperlink?", [
     new Answer("<div>", false),
     new Answer("<a>", true),
     new Answer("<p>", false),
     new Answer("<span>", false),
   ]),
 
-  new Question("Koji je rezultat izraza 5x6?", [
-    new Answer("25", false),
-    new Answer("30", true),
-    new Answer("35", false),
-    new Answer("40", false),
+  new Question("Which number is the smallest prime number greater than 10?", [
+    new Answer("11", true),
+    new Answer("13", false),
+    new Answer("17", false),
+    new Answer("19", false),
   ]),
 
-  new Question("Koja država ima oblik čizme?", [
-    new Answer("Španjolska", false),
-    new Answer("Italija", true),
-    new Answer("Grčka", false),
+  new Question("Which country is shaped like a boot?", [
+    new Answer("Spain", false),
+    new Answer("Italy", true),
+    new Answer("Greece", false),
     new Answer("Portugal", false),
   ]),
 
-  new Question("Koja je najbrža kopnena životinja?", [
-    new Answer("Lav", false),
-    new Answer("Gepard", true),
-    new Answer("Tigar", false),
-    new Answer("Konj", false),
+  new Question("Which is the fastest land animal?", [
+    new Answer("Lion", false),
+    new Answer("Cheetah", true),
+    new Answer("Tiger", false),
+    new Answer("Horse", false),
   ]),
 
-  new Question("Koji je glavni grad Francuske?", [
+  new Question("What is the capital of France?", [
     new Answer("Lyon", false),
-    new Answer("Pariz", true),
+    new Answer("Paris", true),
     new Answer("Marseille", false),
     new Answer("Nice", false),
   ]),
 
-  new Question("Koji uređaj se koristi za mjerenje temperature?", [
-    new Answer("Barometar", false),
-    new Answer("Termometar", true),
-    new Answer("Higrometar", false),
+  new Question("Which instrument is used to measure temperature?", [
+    new Answer("Barometer", false),
+    new Answer("Thermometer", true),
+    new Answer("Hygrometer", false),
     new Answer("Voltmeter", false),
   ]),
 
-  new Question("Koji je najveći kontinent?", [
-    new Answer("Europa", false),
-    new Answer("Afrika", false),
-    new Answer("Azija", true),
-    new Answer("Australija", false),
+  new Question("Which is the largest continent?", [
+    new Answer("Europe", false),
+    new Answer("Africa", false),
+    new Answer("Asia", true),
+    new Answer("Australia", false),
   ]),
 
-  new Question("Koji broj je binarno zapisan kao 101?", [
+  new Question("Which number is written as 101 in binary?", [
     new Answer("3", false),
     new Answer("4", false),
     new Answer("5", true),
     new Answer("6", false),
   ]),
 
-  new Question("Koji CSS property mijenja boju teksta?", [
+  new Question("Which CSS property changes the text color?", [
     new Answer("background", false),
     new Answer("font-style", false),
     new Answer("color", true),
     new Answer("border", false),
   ]),
 
-  new Question("Koji je najveći otok na svijetu?", [
-    new Answer("Madagaskar", false),
-    new Answer("Grenland", true),
-    new Answer("Island", false),
+  new Question("Which is the largest island in the world?", [
+    new Answer("Madagascar", false),
+    new Answer("Greenland", true),
+    new Answer("Iceland", false),
     new Answer("Borneo", false),
   ]),
 
-  new Question("Koliko sati ima jedan dan?", [
+  new Question("How many hours are in a day?", [
     new Answer("12", false),
     new Answer("18", false),
     new Answer("24", true),
     new Answer("48", false),
   ]),
 
-  new Question("Koji je simbol za vodu u kemiji?", [
+  new Question("What is the chemical formula for water?", [
     new Answer("CO2", false),
     new Answer("H2O", true),
     new Answer("O2", false),
     new Answer("NaCl", false),
   ]),
 
-  new Question("Koji framework upotrebljava JSX?", [
+  new Question("Which framework uses JSX?", [
     new Answer("Angular", false),
     new Answer("React", true),
     new Answer("Vue", false),
     new Answer("Laravel", false),
   ]),
 
-  new Question("Koja planet je poznat kao Crveni planet?", [
+  new Question("Which planet is known as the Red Planet?", [
     new Answer("Mars", true),
     new Answer("Jupiter", false),
-    new Answer("Venera", false),
+    new Answer("Venus", false),
     new Answer("Saturn", false),
   ]),
 
-  new Question("Koji je najveći broj u ovom nizu?", [
-    new Answer("102", false),
-    new Answer("120", false),
-    new Answer("1002", true),
-    new Answer("999", false),
+  new Question(
+    "Which of these animals is capable of regenerating entire body parts?",
+    [
+      new Answer("Elephant", false),
+      new Answer("Starfish", true),
+      new Answer("Giraffe", false),
+      new Answer("Kangaroo", false),
+    ],
+  ),
+
+  new Question(
+    "Which data structure uses First-In-First-Out (FIFO) principle?",
+    [
+      new Answer("Stack", false),
+      new Answer("Queue", true),
+      new Answer("Tree", false),
+      new Answer("Graph", false),
+    ],
+  ),
+
+  new Question("Which is the largest organ in the human body?", [
+    new Answer("Heart", false),
+    new Answer("Liver", false),
+    new Answer("Skin", true),
+    new Answer("Lungs", false),
   ]),
 
-  new Question("Koji dio računala služi za obradu podataka?", [
-    new Answer("RAM", false),
-    new Answer("CPU", true),
-    new Answer("SSD", false),
-    new Answer("GPU", false),
+  new Question("Which mathematician is known as the father of geometry?", [
+    new Answer("Euclid", true),
+    new Answer("Pythagoras", false),
+    new Answer("Archimedes", false),
+    new Answer("Newton", false),
   ]),
 
-  new Question("Koji je najveći organ u ljudskom tijelu?", [
-    new Answer("Srce", false),
-    new Answer("Jetra", false),
-    new Answer("Koža", true),
-    new Answer("Pluća", false),
+  new Question("In which country was paper invented?", [
+    new Answer("Egypt", false),
+    new Answer("China", true),
+    new Answer("Greece", false),
+    new Answer("India", false),
   ]),
 
-  new Question("Koji je rezultat izraza 9x9?", [
-    new Answer("72", false),
-    new Answer("81", true),
-    new Answer("99", false),
-    new Answer("69", false),
+  new Question("What is the square root of 256?", [
+    new Answer("14", false),
+    new Answer("16", true),
+    new Answer("18", false),
+    new Answer("20", false),
   ]),
 
+  new Question("Which gas is most abundant in Earth's atmosphere?", [
+    new Answer("Oxygen", false),
+    new Answer("Nitrogen", true),
+    new Answer("Carbon Dioxide", false),
+    new Answer("Hydrogen", false),
+  ]),
 ];

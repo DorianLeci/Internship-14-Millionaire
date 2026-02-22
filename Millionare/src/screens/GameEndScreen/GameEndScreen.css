@@ -51,6 +51,9 @@
 }
 
 .game-end-title.quit::before {
+  top: -95%;
+  left: 90%;
+  width: 150px;
   background-image: url("../../assets/images/quit.svg");
 }
 

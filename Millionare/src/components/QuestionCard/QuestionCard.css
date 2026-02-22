@@ -2,11 +2,17 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.5rem;
 }
 
 .question__text {
+  max-width: 1000px;
   font-size: 36px;
+  text-align: center;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .answer-container {
@@ -17,7 +23,7 @@
 
 .confirm-button {
   position: absolute;
-  bottom: -100%;
+  bottom: -150px;
   left: 50%;
   width: 300px;
   font-size: 28px;

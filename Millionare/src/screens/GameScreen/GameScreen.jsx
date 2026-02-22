@@ -58,7 +58,7 @@ export function GameScreen({ onGameEnd }) {
     <div className={screenClass}>
       {phase === GamePhase.PLAYING && (
         <div className="leftSide-wrapper">
-          <div class="additional-buttons-wrapper">
+          <div className="additional-buttons-wrapper">
             <JokerContainer currentQuestionAnswered={currentQuestionAnswered} />
             <div className="quit-button-wrapper">
               <h2 className="quit-title">Quit</h2>
