@@ -297,7 +297,7 @@ export const questions = [
   new Question(
     "Which programming paradigm focuses on objects and their interactions?",
     [
-      new Answer("Object-Oriented Programming", true),
+      new Answer("OOP", true),
       new Answer("Functional Programming", false),
       new Answer("Procedural Programming", false),
       new Answer("Logic Programming", false),
