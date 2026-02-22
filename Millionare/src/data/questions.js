@@ -156,13 +156,6 @@ export const questions = [
     new Answer("Borneo", false),
   ]),
 
-  new Question("How many hours are in a day?", [
-    new Answer("12", false),
-    new Answer("18", false),
-    new Answer("24", true),
-    new Answer("48", false),
-  ]),
-
   new Question("What is the chemical formula for water?", [
     new Answer("CO2", false),
     new Answer("H2O", true),
@@ -238,4 +231,103 @@ export const questions = [
     new Answer("Carbon Dioxide", false),
     new Answer("Hydrogen", false),
   ]),
+
+  new Question("Which language is primarily spoken in Brazil?", [
+    new Answer("Spanish", false),
+    new Answer("Portuguese", true),
+    new Answer("English", false),
+    new Answer("French", false),
+  ]),
+
+  new Question("Which natural phenomenon is measured by the Richter scale?", [
+    new Answer("Earthquake", true),
+    new Answer("Tornado", false),
+    new Answer("Hurricane", false),
+    new Answer("Volcano eruption", false),
+  ]),
+
+  new Question("Who wrote the play 'Romeo and Juliet'?", [
+    new Answer("William Shakespeare", true),
+    new Answer("Mark Twain", false),
+    new Answer("Jane Austen", false),
+    new Answer("Charles Dickens", false),
+  ]),
+
+  new Question("Which ancient civilization built Machu Picchu?", [
+    new Answer("Inca", true),
+    new Answer("Maya", false),
+    new Answer("Aztec", false),
+    new Answer("Olmec", false),
+  ]),
+
+  new Question("Which philosopher wrote 'The Republic'?", [
+    new Answer("Plato", true),
+    new Answer("Aristotle", false),
+    new Answer("Socrates", false),
+    new Answer("Descartes", false),
+  ]),
+
+  new Question(
+    "Which ancient civilization developed the first known writing system?",
+    [
+      new Answer("Sumerians", true),
+      new Answer("Egyptians", false),
+      new Answer("Greeks", false),
+      new Answer("Romans", false),
+    ],
+  ),
+
+  new Question(
+    "Which HTTP status code indicates that a resource was not found?",
+    [
+      new Answer("404", true),
+      new Answer("200", false),
+      new Answer("500", false),
+      new Answer("403", false),
+    ],
+  ),
+
+  new Question("Which design pattern ensures a class has only one instance?", [
+    new Answer("Singleton", true),
+    new Answer("Factory", false),
+    new Answer("Observer", false),
+    new Answer("Strategy", false),
+  ]),
+
+  new Question(
+    "Which programming paradigm focuses on objects and their interactions?",
+    [
+      new Answer("Object-Oriented Programming", true),
+      new Answer("Functional Programming", false),
+      new Answer("Procedural Programming", false),
+      new Answer("Logic Programming", false),
+    ],
+  ),
+
+  new Question(
+    "Which array method returns a new array containing elements that pass a test?",
+    [
+      new Answer("filter()", true),
+      new Answer("map()", false),
+      new Answer("reduce()", false),
+      new Answer("forEach()", false),
+    ],
+  ),
+
+  new Question("What is the smallest prime number greater than 50?", [
+    new Answer("53", true),
+    new Answer("51", false),
+    new Answer("55", false),
+    new Answer("59", false),
+  ]),
+
+  new Question(
+    "Which organelle is responsible for producing energy in cells?",
+    [
+      new Answer("Mitochondria", true),
+      new Answer("Nucleus", false),
+      new Answer("Ribosome", false),
+      new Answer("Golgi apparatus", false),
+    ],
+  ),
 ];
