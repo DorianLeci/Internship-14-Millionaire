@@ -22,17 +22,22 @@
 git clone git@github.com:DorianLeci/Internship-14-Millionaire.git
 ```
 
-2.Navigate into the project folder:
+2. Navigate into the project folder:
 ```
 cd Internship-14-Millionaire/Millionaire
 ```
 
-3.Install dependencies:
+3. Install dependencies:
 ```
 npm install
 ```
 
-4.Run app:
+4. Run app:
 ```
 npm run dev
+```
+
+5. Type application url into website (by default it should be following):
+```
+http://localhost:5173/
 ```
